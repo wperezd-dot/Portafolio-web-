@@ -1,3 +1,4 @@
+/*VARIABLES Y CONFIGURACIÓN BASE*/
 :root {
     --primary-color: #6c63ff;
     --primary-hover: #5651d8;
@@ -47,6 +48,7 @@ img {
     display: block;
 }
 
+/*HEADER Y NAVEGACIÓN*/
 header {
     position: fixed;
     top: 0;
@@ -109,6 +111,7 @@ header {
     width: 100%;
 }
 
+/*SECCIONES GENERALES Y BOTONES*/
 section {
     padding: 80px 5%;
     max-width: 1400px;
@@ -135,10 +138,11 @@ section {
     border-radius: 2px;
 }
 
+/* Botón personalizado*/
 .btn {
     display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--primary-color) !important;
+    color: white !important;
     padding: .8rem 1.8rem;
     border-radius: 6px;
     font-weight: 600;
@@ -148,11 +152,12 @@ section {
 }
 
 .btn:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--primary-hover) !important;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
 }
 
+/*HERO / INICIO*/
 .hero {
     min-height: 100vh;
     display: flex;
@@ -228,6 +233,7 @@ section {
     box-shadow: 0 0 30px rgba(108, 99, 255, 0.3);
 }
 
+/*EXPERIENCIA (TIMELINE)*/
 .timeline {
     position: relative;
     max-width: 900px;
@@ -282,21 +288,7 @@ section {
     margin-bottom: 1rem;
 }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .7rem;
-    margin-top: 1rem;
-}
-
-.skills li {
-    font-size: .75rem;
-    padding: .4rem .9rem;
-    background-color: var(--darker-bg);
-    border-radius: 50px;
-    border: 1px solid var(--border-color);
-}
-
+/*PROYECTOS*/
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -355,23 +347,55 @@ section {
     color: var(--primary-color);
 }
 
+.project-links {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+/*SECCIÓN CONTACTO (AJUSTES DE BOOTSTRAP)*/
 .contact {
     text-align: center;
 }
 
 .contact-container {
-    background-color: var(--card-bg);
-    padding: 3rem;
-    border-radius: 15px;
-    max-width: 600px;
+    max-width: 650px !important;
     margin: 0 auto;
     border: 1px solid var(--border-color);
+    transition: var(--transition-slow);
 }
 
-.contact-info {
-    margin-top: 2rem;
+/* Estilo para los inputs de Bootstrap */
+.form-control {
+    background-color: var(--darker-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--light-text) !important;
+    padding: 0.8rem;
 }
 
+.form-control:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3) !important;
+    outline: none;
+}
+
+.form-label {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Validación visual */
+.was-validated .form-control:invalid {
+    border-color: #ff6b6b !important;
+}
+
+.invalid-feedback {
+    color: #ff6b6b !important;
+    font-size: 0.8rem;
+}
+
+/*CERTIFICADOS Y HABILIDADES*/
 .certificates-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -397,10 +421,6 @@ section {
     transform: scale(1.03);
 }
 
-.skills-section {
-    text-align: center;
-}
-
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -419,16 +439,12 @@ section {
     transition: var(--transition-fast);
 }
 
-.skills-list span i {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
 .skills-list span:hover {
     border-color: var(--primary-color);
     background-color: var(--darker-bg);
 }
 
+/*FOOTER Y RESPONSIVE*/
 footer {
     background-color: var(--darker-bg);
     border-top: 1px solid var(--border-color);
@@ -451,12 +467,10 @@ footer {
         text-align: center;
         gap: 3rem;
     }
-    
     .hero-text p {
         margin-left: auto;
         margin-right: auto;
     }
-
     .social-links {
         justify-content: center;
     }
@@ -466,7 +480,6 @@ footer {
     .nav-links {
         display: none;
     }
-    
     section {
         padding: 60px 5%;
     }
